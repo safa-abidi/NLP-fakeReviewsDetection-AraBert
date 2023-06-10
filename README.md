@@ -15,10 +15,37 @@ Our project proposes a novel approach to tackle the problem of fake Arabic revie
 #### 1. Datasets
 To train and evaluate our models, we utilized a comprehensive dataset consisting of Arabic hotel reviews. The dataset was carefully curated and included both genuine and fake reviews. It comprised a diverse range of reviews from various sources, ensuring a representative sample of the Arabic hospitality industry.
 
+- Labeled Dataset: the labeled dataset consisted of 800 genuine reviews and 800 fake reviews.
+
+| Review Type          | Data Source                                               | Number of Reviews |
+|----------------------|-----------------------------------------------------------|------------------|
+| Genuine positive     | TripAdvisor                                              | 400              |
+| Deceptive positive   | Mechanical Turk                                          | 400              |
+| Genuine negative     | Expedia, Hotels.com, Orbitz, Priceline, TripAdvisor, Yelp | 400              |
+| Deceptive negative   | Mechanical Turk                                          | 400              |
+
+- Unlabeled Datasets
+
+| Dataset     | Number of Reviews | Data Source                     |
+|-------------|------------------|---------------------------------|
+| 1           | 800              | TripAdvisor                    |
+| 2           | 30400            | Booking.com                    |
+| 3           | 4802             | TripAdvisor and Booking.com    |
+
 #### 2. Preprocessing
-Before feeding the data into our models, we performed preprocessing steps to enhance the quality and usability of the dataset. These steps involved removing noise, normalizing text, handling missing values, and tokenizing the reviews. Additionally, we employed techniques such as stop-word removal, stemming, and handling imbalanced classes to optimize the dataset for training.
+Before feeding the data into our models, we performed preprocessing steps to enhance the quality and usability of the dataset. These steps involved 
+1. Stemming: is a technique used to reduce words to their root or base form. It helps in standardizing words and reducing the variations caused by different inflections or conjugations.
+
+2. Removal of diacritical signs from characters in the text: This technique involves simplifying the text by removing accent marks, specific punctuation marks in the Arabic language, and other orthographic modifications related to pronunciation.
+
+3. Substitution of phone numbers, addresses, and other sensitive information: Sensitive information such as phone numbers, addresses, and other private data are substituted with generic character strings to protect privacy and confidentiality.
+
+4. Substitution of emojis: substituted with appropriate textual representations.
+
 
 ## Models
+After experimenting with Naive Bayes, Logistic Regression, and SVM algorithms, we found that Logistic Regression yielded the best results. It outperformed the other two algorithms in terms of accuracy and F1-score.
+
 #### Self-Learning
 
 We employed the self-learning technique, a form of semi-supervised learning, to leverage a small labeled dataset and a larger unlabeled dataset. This approach allowed us to iteratively label the unlabeled data using the trained model and incorporate it into the training process, enhancing the model's performance.
