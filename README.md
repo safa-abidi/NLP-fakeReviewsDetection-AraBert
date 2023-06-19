@@ -11,6 +11,8 @@ The proliferation of fake Arabic reviews in the hospitality industry has made it
 ### Solution
 Our project proposes a novel approach to tackle the problem of fake Arabic reviews detection. By leveraging semi-supervised techniques, specifically self-learning and Gan-Bert, using large unlabeled datasets, we aim to improve the performance of fake reviews detection models.
 
+![Solution](assets/sol.png "Solution")
+
 ## Data
 #### 1. Datasets
 To train and evaluate our models, we utilized a comprehensive dataset consisting of Arabic hotel reviews. The dataset was carefully curated and included both genuine and fake reviews. It comprised a diverse range of reviews from various sources, ensuring a representative sample of the Arabic hospitality industry.
@@ -54,6 +56,13 @@ We employed the self-learning technique, a form of semi-supervised learning, to 
 A combination of Generative Adversarial Networks (GANs) and Bidirectional Encoder Representations from Transformers (BERT), was utilized to further improve the detection accuracy. The GAN component generated realistic fake reviews, while BERT learned to differentiate between genuine and fake reviews, resulting in a robust model for fake Arabic review detection.
 ## Results
 Our models achieved promising results in detecting fake Arabic reviews in the hospitality industry. The evaluation metrics, including accuracy and F1-score, demonstrated the effectiveness of our approach. The models outperformed traditional methods and showcased the potential of semi-supervised techniques in addressing the problem of fake reviews.
+
+| Approach     | Accuracy | F1-score                     |
+|-------------|------------------|---------------------------------|
+| Self-learning           | 0.83              | 0.84                    |
+| Gan-BERT          | 0.82            | 0.82                    |
+
+![Final result](assets/res.png "Final result")
 
 ## Conclusion and Perspectives
 In conclusion, our project successfully addressed the challenge of fake Arabic reviews detection in the hospitality industry using semi-supervised techniques. The developed models showcased significant improvements in accuracy and performance compared to traditional supervised approaches.
